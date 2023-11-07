@@ -611,159 +611,120 @@ input.form-control {
     color: #fff;
 }
 
-
+/* Set a gradient background and an image background centered and covering the entire viewport */
 .form-main {
-    background: linear-gradient(to bottom, #00000024, #00000024),
-        url(../img/contactus.webp) no-repeat center;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.36)), url(../img/contactus.webp) no-repeat center;
     background-size: cover;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
 
-    .main-wrapper {
-        border-radius: 10px;
-        padding: 25px;
-        width: 40%;
-        box-shadow: 0 0 5px 5px #00000020;
-        backdrop-filter: blur(5px);
-        background-color: #54545485;
+/* Style the main content wrapper */
+.main-wrapper {
+    border-radius: 10px;
+    padding: 25px;
+    width: 40%;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.20);
+    backdrop-filter: blur(5px);
+    background-color: rgba(84, 84, 84, 0.85);
 
-        @media screen and (max-width: 991px) {
-            width: 70%;
-        }
-
-        @media screen and (max-width: 767px) {
-            width: 90%;
-        }
-
-        .form-head {
-            font-size: 30px;
-            line-height: 40px;
-            font-weight: 600;
-            text-align: center;
-            margin: 0px 0 25px;
-        }
-
-        .form-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 15px;
-
-            .form-card {
-                position: relative;
-                width: 100%;
-
-                .form-input {
-                    padding: 23px 20px 10px;
-                    width: 100%;
-                    border: 1px solid #000;
-                    border-radius: 5px;
-                    background: #ffffff;
-                    outline: none;
-                    font-size: 20px;
-                    line-height: 30px;
-                    font-weight: 400;
-                    box-sizing: border-box;
-
-                    &:valid,
-                    &:focus {
-                        border: 1px solid $color-gray;
-                    }
-
-                    &:valid~.form-label,
-                    &:focus~.form-label {
-                        color: $color-gray;
-                        top: 30%;
-                        transform: translateY(-70%);
-                        font-size: 13px;
-                        line-height: 23px;
-                    }
-
-                    &:-webkit-autofill,
-                    &:-webkit-autofill:hover,
-                    &:-webkit-autofill:focus,
-                    &:-webkit-autofill:active {
-                        transition: background-color 9999s ease-in-out 0s;
-                    }
-
-                    &::-webkit-outer-spin-button,
-                    &::-webkit-inner-spin-button {
-                        -webkit-appearance: none;
-                        margin: 0;
-                    }
-                }
-
-                .form-label {
-                    position: absolute;
-                    left: 25px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    pointer-events: none;
-                    transition: 0.3s;
-                    margin: 0;
-                    font-size: 18px;
-                    line-height: 28px;
-                    font-weight: 500;
-                }
-
-                .form-textarea {
-                    padding: 20px 25px 15px;
-                    width: 100%;
-                    border: 1px solid #000;
-                    border-radius: 5px;
-                    background: #fff;
-                    outline: none;
-                    font-size: 20px;
-                    line-height: 30px;
-                    font-weight: 400;
-                    display: -webkit-box;
-                    -webkit-line-clamp: 3;
-                    -webkit-box-orient: vertical;
-                    overflow: hidden;
-                    resize: none;
-                    box-sizing: border-box;
-
-                    &:valid,
-                    &:focus {
-                        border: 1px solid $color-gray;
-                    }
-
-                    &:valid~.form-textarea-label,
-                    &:focus~.form-textarea-label {
-                        color: $color-gray;
-                        top: 18%;
-                        transform: translateY(-82%);
-                        font-size: 13px;
-                        line-height: 23px;
-                    }
-
-                    &:-webkit-autofill,
-                    &:-webkit-autofill:hover,
-                    &:-webkit-autofill:focus,
-                    &:-webkit-autofill:active {
-                        transition: background-color 9999s ease-in-out 0s;
-                    }
-                }
-
-                .form-textarea-label {
-                    position: absolute;
-                    left: 25px;
-                    top: 30%;
-                    transform: translateY(-70%);
-                    pointer-events: none;
-                    transition: 0.3s;
-                    margin: 0;
-                    font-size: 18px;
-                    line-height: 28px;
-                    font-weight: 500;
-                }
-            }
-        }
+    /* Responsive design for smaller screens */
+    @media screen and (max-width: 991px) {
+        width: 70%;
     }
+
+    @media screen and (max-width: 767px) {
+        width: 90%;
+    }
+}
+
+/* Style the header of the form */
+.form-head {
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0px 0 25px;
+}
+
+/* Style the form elements wrapper */
+.form-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Style individual form cards */
+.form-card {
+    position: relative;
+    width: 100%;
+}
+
+/* Style form inputs */
+.form-input, .form-textarea {
+    padding: 23px 20px 10px;
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background: #fff;
+    outline: none;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    box-sizing: border-box;
+
+    /* Apply styles when the input is focused or has valid content */
+    &:valid, &:focus {
+        border: 1px solid #888;
+    }
+}
+
+/* Label for form inputs */
+.form-label {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.3s;
+    margin: 0;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+}
+
+/* Style form textareas */
+.form-textarea {
+    padding: 20px 25px 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    resize: none;
+
+    /* Apply styles when the textarea is focused or has valid content */
+    &:valid, &:focus {
+        border: 1px solid #888;
+    }
+}
+
+/* Label for form textareas */
+.form-textarea-label {
+    position: absolute;
+    left: 25px;
+    top: 30%;
+    transform: translateY(-70%);
+    pointer-events: none;
+    transition: 0.3s;
+    margin: 0;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
 }
 
 

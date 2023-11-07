@@ -611,9 +611,10 @@ input.form-control {
     color: #fff;
 }
 
-/* Set a gradient background and an image background centered and covering the entire viewport */
+/* Common styles */
 .form-main {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.36)), url(../img/contactus.webp) no-repeat center;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(../img/contactus.webp) no-repeat center;
     background-size: cover;
     min-height: 100vh;
     display: flex;
@@ -622,35 +623,37 @@ input.form-control {
     justify-content: center;
 }
 
-/* Style the main content wrapper */
 .main-wrapper {
     border-radius: 10px;
     padding: 25px;
     width: 40%;
-    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.20);
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(5px);
-    background-color: rgba(84, 84, 84, 0.85);
+    background-color: rgba(84, 84, 84, 0.53);
+}
 
-    /* Responsive design for smaller screens */
-    @media screen and (max-width: 991px) {
+/* Media Queries */
+@media screen and (max-width: 991px) {
+    .main-wrapper {
         width: 70%;
     }
+}
 
-    @media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
+    .main-wrapper {
         width: 90%;
     }
 }
 
-/* Style the header of the form */
+/* Form Styles */
 .form-head {
     font-size: 30px;
     line-height: 40px;
     font-weight: 600;
     text-align: center;
-    margin: 0px 0 25px;
+    margin: 0 0 25px;
 }
 
-/* Style the form elements wrapper */
 .form-wrapper {
     display: flex;
     align-items: center;
@@ -659,14 +662,13 @@ input.form-control {
     gap: 15px;
 }
 
-/* Style individual form cards */
 .form-card {
     position: relative;
     width: 100%;
 }
 
-/* Style form inputs */
-.form-input, .form-textarea {
+.form-input,
+.form-textarea {
     padding: 23px 20px 10px;
     width: 100%;
     border: 1px solid #000;
@@ -677,54 +679,58 @@ input.form-control {
     line-height: 30px;
     font-weight: 400;
     box-sizing: border-box;
-
-    /* Apply styles when the input is focused or has valid content */
-    &:valid, &:focus {
-        border: 1px solid #888;
-    }
 }
 
-/* Label for form inputs */
-.form-label {
-    position: absolute;
-    left: 25px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    transition: 0.3s;
-    margin: 0;
-    font-size: 18px;
-    line-height: 28px;
-    font-weight: 500;
+.form-input:focus,
+.form-textarea:focus {
+    border: 1px solid #ccc;
+    /* Change this to your desired focus color */
 }
 
-/* Style form textareas */
-.form-textarea {
-    padding: 20px 25px 15px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    resize: none;
-
-    /* Apply styles when the textarea is focused or has valid content */
-    &:valid, &:focus {
-        border: 1px solid #888;
-    }
-}
-
-/* Label for form textareas */
+.form-label,
 .form-textarea-label {
     position: absolute;
     left: 25px;
-    top: 30%;
-    transform: translateY(-70%);
     pointer-events: none;
     transition: 0.3s;
-    margin: 0;
     font-size: 18px;
     line-height: 28px;
     font-weight: 500;
+}
+
+/* Additional Styles for Form Inputs and Textareas */
+.form-input::-webkit-inner-spin-button,
+.form-input::-webkit-outer-spin-button,
+.form-textarea::-webkit-inner-spin-button,
+.form-textarea::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* iOS Autofill Styles */
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover,
+.form-input:-webkit-autofill:focus,
+.form-input:-webkit-autofill:active,
+.form-textarea:-webkit-autofill,
+.form-textarea:-webkit-autofill:hover,
+.form-textarea:-webkit-autofill:focus,
+.form-textarea:-webkit-autofill:active {
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+/* Adjust the appearance of autofilled labels if needed */
+
+.form-input:-webkit-autofill~.form-label,
+.form-input:focus~.form-label,
+.form-textarea:-webkit-autofill~.form-textarea-label,
+.form-textarea:focus~.form-textarea-label {
+    color: #ccc;
+    /* Change this to your desired autofill label color */
+    top: 30%;
+    transform: translateY(-70%);
+    font-size: 13px;
+    line-height: 23px;
 }
 
 
@@ -892,6 +898,6 @@ input.form-control {
     color: #fff;
 }
 
-a{
+a {
     text-decoration: none;
 }
